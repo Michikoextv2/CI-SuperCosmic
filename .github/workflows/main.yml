@@ -442,7 +442,7 @@ jobs:
           SHORT_SHA="${{ needs.build.outputs.short_sha }}"
 
           RELEASE_TAG="${DATE_TAG}-${SHORT_SHA}"
-          RELEASE_NAME="SuperPotato-${DATE_TAG}-${SHORT_SHA}"
+          RELEASE_NAME="SuperCosmic-${DATE_TAG}-${SHORT_SHA}"
           RELEASE_URL="https://github.com/${{ github.repository }}/releases/tag/${RELEASE_TAG}"
 
           ZIP_NONKSU="${KERNEL_NAME}-NonKSU-${DATE_TAG}.zip"
