@@ -101,7 +101,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: FoxMiko-Labs/android_kernel_xiaomi_surya
-          ref: lineage-24.0
+          ref: upstream
           token: ${{ secrets.GH_PAT }}
           fetch-depth: 5
           path: kernel-source
@@ -529,7 +529,7 @@ jobs:
             https://github.com/FoxMiko-Labs/android_kernel_xiaomi_surya.git \
             kernel-log
           cd kernel-log
-          git fetch origin lineage-24.0
+          git fetch origin upstream
           git checkout FETCH_HEAD
 
       # --------------------------------------------------------------------
