@@ -100,8 +100,8 @@ jobs:
       - name: Checkout kernel source
         uses: actions/checkout@v4
         with:
-          repository: FoxMiko-Labs/android_kernel_xiaomi_surya
-          ref: upstream
+          repository: Michikoextv2/android_kernel_xiaomi_surya
+          ref: lineage-24.0
           token: ${{ secrets.GH_PAT }}
           fetch-depth: 5
           path: kernel-source
@@ -121,7 +121,7 @@ jobs:
         run: |
           python3 "$TG_HELPER" "Implanting NoMount..."
           cd "$KERNEL_DIR"
-          curl -fsSL https://raw.githubusercontent.com/maxsteeel/nomount/refs/heads/dev/kernel/setup.sh | bash -
+          curl -fsSL https://raw.githubusercontent.com/maxsteeel/nomount/refs/heads/dev/kernel/setup.sh | bash -s master
           python3 "$TG_HELPER" "NoMount: implanted"
 
       # --------------------------------------------------------------------
@@ -526,10 +526,10 @@ jobs:
           echo "https://x-access-token:${{ secrets.GH_PAT }}@github.com" \
             > ~/.git-credentials
           git clone --depth=6 --no-checkout \
-            https://github.com/FoxMiko-Labs/android_kernel_xiaomi_surya.git \
+            https://github.com/Michikoextv2/android_kernel_xiaomi_surya.git \
             kernel-log
           cd kernel-log
-          git fetch origin upstream
+          git fetch origin lineage-24.0
           git checkout FETCH_HEAD
 
       # --------------------------------------------------------------------
